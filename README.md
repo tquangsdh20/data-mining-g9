@@ -1,5 +1,6 @@
 <p align="center">    
 <img src="./.github/logo.gif?sanitize=true">
+<img src="https://img.shields.io/badge/group-9-red?style=plastic"> <img src="https://img.shields.io/badge/members-Tran%20Quang%20%7C%20Le%20Minh%20Thinh%20%7C%20Tran%20Hoang%20Vinh%20%7C%20Nguyen%20Hoang%20Phuc%20%7C%20Nguyen%20Dinh%20Hoang%20Quy-red?style=plastic"> <img src="https://img.shields.io/badge/Lecturer-Tran%20Minh%20Quang-orange?style=plastic">
 <p>
 
 
