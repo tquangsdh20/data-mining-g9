@@ -1,6 +1,6 @@
 <p align="center">    
 <img src="./.github/logo.gif?sanitize=true">
-<img src="https://img.shields.io/badge/group-9-red?style=plastic"> <img src="https://img.shields.io/badge/members-Tran%20Quang%20%7C%20Le%20Minh%20Thinh%20%7C%20Tran%20Hoang%20Vinh%20%7C%20Nguyen%20Hoang%20Phuc%20%7C%20Nguyen%20Dinh%20Hoang%20Quy-red?style=plastic"> <img src="https://img.shields.io/badge/Lecturer-Tran%20Minh%20Quang-orange?style=plastic">
+<img src="https://img.shields.io/badge/Group9-Tran%20Quang%20%7C%20Le%20Minh%20Thinh%20%7C%20Tran%20Hoang%20Vinh%20%7C%20Nguyen%20Hoang%20Phuc%20%7C%20Nguyen%20Dinh%20Hoang%20Quy-blue?style=plastic"> <img src="https://img.shields.io/badge/Lecturer-Tran%20Minh%20Quang-orange?style=plastic">
 <p>
 
 
@@ -310,17 +310,10 @@ head(predicted_val,24)
 summary(predicted_val)
 ```
 
-<dl class=dl-inline><dt>4</dt><dd>0</dd><dt>6</dt><dd>0</dd><dt>7</dt><dd>0</dd><dt>18</dt><dd>0</dd><dt>21</dt><dd>0</dd></dl>
-
 <details>
 	<summary style=display:list-item;cursor:pointer>
 		<strong>Levels</strong>:
 	</summary>
-	<style>
-	.list-inline {list-style: none; margin:0; padding: 0}
-	.list-inline>li {display: inline-block}
-	.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-	</style>
 	<ol class=list-inline><li>'0'</li><li>'1'</li></ol>
 </details>
 
@@ -402,17 +395,10 @@ predicted_val
 ```
 
 
-<dl class=dl-inline><dt>4</dt><dd>0</dd><dt>6</dt><dd>0</dd><dt>7</dt><dd>0</dd><dt>18</dt><dd>0</dd><dt>21</dt><dd>0</dd></dl>
-
 <details>
 	<summary style=display:list-item;cursor:pointer>
 		<strong>Levels</strong>:
 	</summary>
-	<style>
-	.list-inline {list-style: none; margin:0; padding: 0}
-	.list-inline>li {display: inline-block}
-	.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-	</style>
 	<ol class=list-inline><li>'0'</li><li>'1'</li></ol>
 </details>
 
@@ -463,17 +449,10 @@ summary(predicted_val)
 ```
 
 
-<dl class=dl-inline><dt>1</dt><dd>0</dd><dt>2</dt><dd>0</dd><dt>3</dt><dd>0</dd><dt>4</dt><dd>0</dd><dt>5</dt><dd>0</dd></dl>
-
 <details>
 	<summary style=display:list-item;cursor:pointer>
 		<strong>Levels</strong>:
 	</summary>
-	<style>
-	.list-inline {list-style: none; margin:0; padding: 0}
-	.list-inline>li {display: inline-block}
-	.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-	</style>
 	<ol class=list-inline><li>'0'</li><li>'1'</li></ol>
 </details>
 
