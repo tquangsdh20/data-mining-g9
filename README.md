@@ -73,13 +73,14 @@ ylab("Transtation")
 .dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
 .dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
 .dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>0</dt><dd>284315</dd><dt>1</dt><dd>492</dd></dl>
+</style>
+<dl class=dl-inline><dt>0</dt><dd>284315</dd><dt>1</dt><dd>492</dd></dl>
 
 
 
 
 <p align="center">    
-<img src="./github/output_5_1.png?sanitize=true">
+<img src="./.github/output_5_1.png?sanitize=true">
 <p>
 
 
@@ -103,7 +104,7 @@ ggplot(credit_dat, aes(x=V1,y=V2,col=Class)) +
 
 
 <p align="center">    
-<img src="./github/output_7_0.png?sanitize=true">
+<img src="./.github/output_7_0.png?sanitize=true">
 <p>
 
 
@@ -178,7 +179,7 @@ ggplot(ovrsmpl, aes(x=V1,y=V2,col=Class)) +
 
 
 <p align="center">    
-<img src="./github/output_13_1.png?sanitize=true">
+<img src="./.github/output_13_1.png?sanitize=true">
 <p>    
     
 
@@ -214,7 +215,7 @@ ggplot(undrsmpl, aes(x=V1,y=V2,col=Class)) +
 
 
 <p align="center">    
-<img src="./github/output_15_1.png?sanitize=true">
+<img src="./.github/output_15_1.png?sanitize=true">
 <p>
     
 
@@ -248,7 +249,7 @@ ggplot(sampls, aes(x=V1,y=V2,col=Class)) +
 
 
 <p align="center">    
-<img src="./github/output_17_1.png?sanitize=true">
+<img src="./.github/output_17_1.png?sanitize=true">
 <p>
     
 
@@ -285,7 +286,7 @@ ggplot(smote, aes(x=V1,y=V2,col=Class)) +
 
 
 <p align="center">    
-<img src="./github/output_20_1.png?sanitize=true">
+<img src="./.github/output_20_1.png?sanitize=true">
 <p>
     
 
@@ -300,7 +301,7 @@ rpart.plot(CART_model, extra = 0, type=5, tweak=1.2)
 
 
 <p align="center">    
-<img src="./github/output_22_0.png?sanitize=true">
+<img src="./.github/output_22_0.png?sanitize=true">
 <p>
     
 
@@ -410,7 +411,7 @@ predicted_val = predict(CART_model, test_dat[,-1], type= 'class')
 
 
 <p align="center">    
-<img src="./github/output_27_0.png?sanitize=true">
+<img src="./.github/output_27_0.png?sanitize=true">
 <p>
     
 
