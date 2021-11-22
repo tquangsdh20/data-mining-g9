@@ -1,5 +1,5 @@
 <p align="center">    
-<img src="./.github/logo.svg?sanitize=true">
+<img src="./.github/logo.gif?sanitize=true">
 <p>
 
 
@@ -69,13 +69,6 @@ ylab("Transtation")
 # scale_color_manual(values=c('dodgerblue2','red'))
 ```
 
-
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style>
 <dl class=dl-inline><dt>0</dt><dd>284315</dd><dt>1</dt><dd>492</dd></dl>
 
 
@@ -316,14 +309,7 @@ head(predicted_val,24)
 summary(predicted_val)
 ```
 
-
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style>
-<dl class=dl-inline><dt>4</dt><dd>0</dd><dt>6</dt><dd>0</dd><dt>7</dt><dd>0</dd><dt>18</dt><dd>0</dd><dt>21</dt><dd>0</dd><dt>29</dt><dd>0</dd><dt>35</dt><dd>0</dd><dt>41</dt><dd>0</dd><dt>52</dt><dd>0</dd><dt>61</dt><dd>0</dd><dt>70</dt><dd>0</dd><dt>72</dt><dd>0</dd><dt>76</dt><dd>0</dd><dt>77</dt><dd>0</dd><dt>80</dt><dd>0</dd><dt>94</dt><dd>0</dd><dt>99</dt><dd>0</dd><dt>104</dt><dd>0</dd><dt>109</dt><dd>0</dd><dt>111</dt><dd>0</dd><dt>121</dt><dd>0</dd><dt>135</dt><dd>0</dd><dt>139</dt><dd>0</dd><dt>150</dt><dd>0</dd></dl>
+<dl class=dl-inline><dt>4</dt><dd>0</dd><dt>6</dt><dd>0</dd><dt>7</dt><dd>0</dd><dt>18</dt><dd>0</dd><dt>21</dt><dd>0</dd></dl>
 
 <details>
 	<summary style=display:list-item;cursor:pointer>
@@ -339,12 +325,6 @@ summary(predicted_val)
 
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style>
 <dl class=dl-inline><dt>0</dt><dd>5615</dd><dt>1</dt><dd>81</dd></dl>
 
 
@@ -355,12 +335,6 @@ summary(test_dat$Class)
 ```
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style>
 <dl class=dl-inline><dt>0</dt><dd>5687</dd><dt>1</dt><dd>9</dd></dl>
 
 
@@ -427,13 +401,7 @@ predicted_val
 ```
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style>
-<dl class=dl-inline><dt>4</dt><dd>0</dd><dt>6</dt><dd>0</dd><dt>7</dt><dd>0</dd><dt>18</dt><dd>0</dd><dt>21</dt><dd>0</dd><dt>29</dt><dd>0</dd><dt>35</dt><dd>0</dd><dt>41</dt><dd>0</dd><dt>52</dt><dd>0</dd><dt>61</dt><dd>0</dd><dt>70</dt><dd>0</dd><dt>72</dt><dd>0</dd><dt>76</dt><dd>0</dd><dt>77</dt><dd>0</dd><dt>80</dt><dd>0</dd><dt>94</dt><dd>0</dd><dt>99</dt><dd>0</dd><dt>104</dt><dd>0</dd><dt>109</dt><dd>0</dd><dt>111</dt><dd>0</dd><dt>121</dt><dd>0</dd><dt>135</dt><dd>0</dd><dt>139</dt><dd>0</dd><dt>150</dt><dd>0</dd><dt>162</dt><dd>0</dd><dt>165</dt><dd>0</dd><dt>172</dt><dd>0</dd><dt>173</dt><dd>0</dd><dt>176</dt><dd>0</dd><dt>180</dt><dd>0</dd><dt>183</dt><dd>0</dd><dt>185</dt><dd>0</dd><dt>189</dt><dd>0</dd><dt>194</dt><dd>0</dd><dt>198</dt><dd>0</dd><dt>211</dt><dd>0</dd><dt>214</dt><dd>0</dd><dt>215</dt><dd>0</dd><dt>218</dt><dd>0</dd><dt>219</dt><dd>0</dd><dt>225</dt><dd>0</dd><dt>230</dt><dd>0</dd><dt>243</dt><dd>0</dd><dt>251</dt><dd>0</dd><dt>253</dt><dd>0</dd><dt>261</dt><dd>0</dd><dt>284</dt><dd>0</dd><dt>294</dt><dd>0</dd><dt>301</dt><dd>0</dd><dt>307</dt><dd>0</dd><dt>309</dt><dd>0</dd><dt>314</dt><dd>0</dd><dt>320</dt><dd>0</dd><dt>325</dt><dd>0</dd><dt>326</dt><dd>0</dd><dt>327</dt><dd>0</dd><dt>328</dt><dd>0</dd><dt>332</dt><dd>0</dd><dt>335</dt><dd>0</dd><dt>341</dt><dd>0</dd><dt>342</dt><dd>0</dd><dt>356</dt><dd>0</dd><dt>358</dt><dd>0</dd><dt>360</dt><dd>0</dd><dt>364</dt><dd>0</dd><dt>367</dt><dd>0</dd><dt>374</dt><dd>0</dd><dt>379</dt><dd>0</dd><dt>385</dt><dd>0</dd><dt>389</dt><dd>0</dd><dt>391</dt><dd>0</dd><dt>394</dt><dd>0</dd><dt>404</dt><dd>0</dd><dt>405</dt><dd>0</dd><dt>406</dt><dd>0</dd><dt>411</dt><dd>0</dd><dt>412</dt><dd>0</dd><dt>421</dt><dd>0</dd><dt>429</dt><dd>0</dd><dt>430</dt><dd>0</dd><dt>431</dt><dd>0</dd><dt>432</dt><dd>0</dd><dt>441</dt><dd>0</dd><dt>449</dt><dd>0</dd><dt>452</dt><dd>0</dd><dt>459</dt><dd>0</dd><dt>467</dt><dd>0</dd><dt>473</dt><dd>0</dd><dt>478</dt><dd>0</dd><dt>484</dt><dd>0</dd><dt>485</dt><dd>0</dd><dt>490</dt><dd>0</dd><dt>493</dt><dd>0</dd><dt>500</dt><dd>0</dd><dt>507</dt><dd>0</dd><dt>509</dt><dd>0</dd><dt>512</dt><dd>0</dd><dt>522</dt><dd>0</dd><dt>527</dt><dd>0</dd><dt>528</dt><dd>0</dd><dt>530</dt><dd>0</dd><dt>531</dt><dd>0</dd><dt>543</dt><dd>0</dd><dt>548</dt><dd>0</dd><dt>552</dt><dd>0</dd><dt>555</dt><dd>0</dd><dt>560</dt><dd>0</dd><dt>561</dt><dd>0</dd><dt>566</dt><dd>0</dd><dt>571</dt><dd>0</dd><dt>576</dt><dd>0</dd><dt>580</dt><dd>0</dd><dt>583</dt><dd>0</dd><dt>590</dt><dd>0</dd><dt>596</dt><dd>0</dd><dt>602</dt><dd>0</dd><dt>603</dt><dd>0</dd><dt>606</dt><dd>0</dd><dt>607</dt><dd>0</dd><dt>610</dt><dd>0</dd><dt>612</dt><dd>0</dd><dt>622</dt><dd>0</dd><dt>631</dt><dd>0</dd><dt>632</dt><dd>0</dd><dt>635</dt><dd>0</dd><dt>642</dt><dd>0</dd><dt>644</dt><dd>0</dd><dt>649</dt><dd>0</dd><dt>651</dt><dd>0</dd><dt>653</dt><dd>0</dd><dt>661</dt><dd>0</dd><dt>668</dt><dd>0</dd><dt>674</dt><dd>0</dd><dt>691</dt><dd>0</dd><dt>694</dt><dd>0</dd><dt>700</dt><dd>0</dd><dt>702</dt><dd>0</dd><dt>703</dt><dd>0</dd><dt>710</dt><dd>0</dd><dt>724</dt><dd>0</dd><dt>727</dt><dd>0</dd><dt>739</dt><dd>0</dd><dt>749</dt><dd>0</dd><dt>753</dt><dd>0</dd><dt>760</dt><dd>0</dd><dt>764</dt><dd>0</dd><dt>770</dt><dd>0</dd><dt>773</dt><dd>0</dd><dt>775</dt><dd>0</dd><dt>781</dt><dd>0</dd><dt>782</dt><dd>0</dd><dt>786</dt><dd>0</dd><dt>794</dt><dd>0</dd><dt>800</dt><dd>0</dd><dt>802</dt><dd>0</dd><dt>804</dt><dd>0</dd><dt>809</dt><dd>0</dd><dt>815</dt><dd>0</dd><dt>818</dt><dd>0</dd><dt>819</dt><dd>0</dd><dt>825</dt><dd>0</dd><dt>826</dt><dd>0</dd><dt>833</dt><dd>0</dd><dt>834</dt><dd>0</dd><dt>839</dt><dd>0</dd><dt>840</dt><dd>0</dd><dt>842</dt><dd>0</dd><dt>852</dt><dd>0</dd><dt>855</dt><dd>0</dd><dt>873</dt><dd>0</dd><dt>874</dt><dd>0</dd><dt>881</dt><dd>0</dd><dt>883</dt><dd>0</dd><dt>884</dt><dd>0</dd><dt>885</dt><dd>0</dd><dt>888</dt><dd>0</dd><dt>902</dt><dd>0</dd><dt>921</dt><dd>0</dd><dt>923</dt><dd>0</dd><dt>924</dt><dd>0</dd><dt>926</dt><dd>0</dd><dt>927</dt><dd>0</dd><dt>933</dt><dd>0</dd><dt>938</dt><dd>0</dd><dt>940</dt><dd>0</dd><dt>943</dt><dd>0</dd><dt>950</dt><dd>0</dd><dt>951</dt><dd>0</dd><dt>955</dt><dd>0</dd><dt>958</dt><dd>0</dd><dt>969</dt><dd>0</dd><dt>970</dt><dd>0</dd><dt>972</dt><dd>0</dd><dt>975</dt><dd>0</dd><dt>984</dt><dd>0</dd><dt>990</dt><dd>0</dd><dt>1005</dt><dd>0</dd><dt>1010</dt><dd>0</dd><dt>1012</dt><dd>0</dd><dt>1015</dt><dd>0</dd><dt>1017</dt><dd>...</dd><dt>1018</dt><dd>0</dd><dt>1023</dt><dd>0</dd><dt>1025</dt><dd>0</dd><dt>1035</dt><dd>0</dd><dt>1040</dt><dd>0</dd><dt>1051</dt><dd>0</dd><dt>1055</dt><dd>0</dd><dt>1056</dt><dd>0</dd><dt>1063</dt><dd>0</dd><dt>1064</dt><dd>0</dd><dt>1067</dt><dd>0</dd><dt>1070</dt><dd>0</dd><dt>1076</dt><dd>0</dd><dt>1087</dt><dd>0</dd><dt>1090</dt><dd>0</dd><dt>1101</dt><dd>0</dd><dt>1110</dt><dd>0</dd><dt>1125</dt><dd>0</dd><dt>1127</dt><dd>0</dd><dt>1132</dt><dd>0</dd><dt>1140</dt><dd>0</dd><dt>1144</dt><dd>0</dd><dt>1150</dt><dd>0</dd><dt>1152</dt><dd>0</dd><dt>1155</dt><dd>0</dd><dt>1156</dt><dd>0</dd><dt>1166</dt><dd>0</dd><dt>1168</dt><dd>0</dd><dt>1172</dt><dd>0</dd><dt>1186</dt><dd>0</dd><dt>1193</dt><dd>0</dd><dt>1197</dt><dd>0</dd><dt>1198</dt><dd>0</dd><dt>1204</dt><dd>0</dd><dt>1207</dt><dd>0</dd><dt>1209</dt><dd>0</dd><dt>1217</dt><dd>0</dd><dt>1218</dt><dd>0</dd><dt>1225</dt><dd>0</dd><dt>1230</dt><dd>0</dd><dt>1238</dt><dd>0</dd><dt>1247</dt><dd>0</dd><dt>1248</dt><dd>0</dd><dt>1249</dt><dd>0</dd><dt>1256</dt><dd>0</dd><dt>1261</dt><dd>0</dd><dt>1270</dt><dd>0</dd><dt>1276</dt><dd>0</dd><dt>1280</dt><dd>0</dd><dt>1282</dt><dd>0</dd><dt>1294</dt><dd>0</dd><dt>1295</dt><dd>0</dd><dt>1307</dt><dd>0</dd><dt>1308</dt><dd>0</dd><dt>1326</dt><dd>0</dd><dt>1333</dt><dd>0</dd><dt>1335</dt><dd>0</dd><dt>1341</dt><dd>0</dd><dt>1342</dt><dd>0</dd><dt>1346</dt><dd>0</dd><dt>1363</dt><dd>0</dd><dt>1364</dt><dd>0</dd><dt>1365</dt><dd>0</dd><dt>1376</dt><dd>0</dd><dt>1379</dt><dd>0</dd><dt>1381</dt><dd>0</dd><dt>1382</dt><dd>0</dd><dt>1385</dt><dd>0</dd><dt>1392</dt><dd>0</dd><dt>1398</dt><dd>0</dd><dt>1402</dt><dd>0</dd><dt>1407</dt><dd>0</dd><dt>1410</dt><dd>0</dd><dt>1421</dt><dd>0</dd><dt>1423</dt><dd>0</dd><dt>1425</dt><dd>0</dd><dt>1427</dt><dd>0</dd><dt>1434</dt><dd>0</dd><dt>1436</dt><dd>0</dd><dt>1439</dt><dd>0</dd><dt>1442</dt><dd>0</dd><dt>1443</dt><dd>0</dd><dt>1449</dt><dd>0</dd><dt>1459</dt><dd>0</dd><dt>1467</dt><dd>0</dd><dt>1472</dt><dd>0</dd><dt>1476</dt><dd>0</dd><dt>1477</dt><dd>0</dd><dt>1481</dt><dd>0</dd><dt>1489</dt><dd>0</dd><dt>1494</dt><dd>0</dd><dt>1497</dt><dd>0</dd><dt>1501</dt><dd>0</dd><dt>1502</dt><dd>0</dd><dt>1503</dt><dd>0</dd><dt>1506</dt><dd>0</dd><dt>1517</dt><dd>0</dd><dt>1518</dt><dd>0</dd><dt>1519</dt><dd>0</dd><dt>1526</dt><dd>0</dd><dt>1528</dt><dd>0</dd><dt>1530</dt><dd>0</dd><dt>1532</dt><dd>0</dd><dt>1534</dt><dd>0</dd><dt>1535</dt><dd>0</dd><dt>1539</dt><dd>0</dd><dt>1548</dt><dd>0</dd><dt>1549</dt><dd>0</dd><dt>1551</dt><dd>0</dd><dt>1557</dt><dd>0</dd><dt>1560</dt><dd>0</dd><dt>1562</dt><dd>0</dd><dt>1563</dt><dd>0</dd><dt>1567</dt><dd>0</dd><dt>1570</dt><dd>0</dd><dt>1572</dt><dd>0</dd><dt>1573</dt><dd>0</dd><dt>1578</dt><dd>0</dd><dt>1580</dt><dd>0</dd><dt>1584</dt><dd>0</dd><dt>1586</dt><dd>0</dd><dt>1587</dt><dd>0</dd><dt>1588</dt><dd>0</dd><dt>1596</dt><dd>0</dd><dt>1603</dt><dd>0</dd><dt>1608</dt><dd>0</dd><dt>1609</dt><dd>0</dd><dt>1619</dt><dd>0</dd><dt>1620</dt><dd>0</dd><dt>1624</dt><dd>0</dd><dt>1630</dt><dd>0</dd><dt>1632</dt><dd>0</dd><dt>1635</dt><dd>0</dd><dt>1647</dt><dd>0</dd><dt>1654</dt><dd>0</dd><dt>1659</dt><dd>0</dd><dt>1667</dt><dd>0</dd><dt>1669</dt><dd>0</dd><dt>1670</dt><dd>0</dd><dt>1675</dt><dd>0</dd><dt>1676</dt><dd>0</dd><dt>1677</dt><dd>0</dd><dt>1682</dt><dd>0</dd><dt>1685</dt><dd>0</dd><dt>1688</dt><dd>0</dd><dt>1689</dt><dd>0</dd><dt>1690</dt><dd>0</dd><dt>1692</dt><dd>0</dd><dt>1694</dt><dd>0</dd><dt>1697</dt><dd>0</dd><dt>1720</dt><dd>0</dd><dt>1727</dt><dd>0</dd><dt>1728</dt><dd>0</dd><dt>1732</dt><dd>0</dd><dt>1734</dt><dd>0</dd><dt>1735</dt><dd>0</dd><dt>1745</dt><dd>0</dd><dt>1746</dt><dd>0</dd><dt>1752</dt><dd>0</dd><dt>1759</dt><dd>0</dd><dt>1773</dt><dd>0</dd><dt>1775</dt><dd>0</dd><dt>1779</dt><dd>0</dd><dt>1789</dt><dd>0</dd><dt>1794</dt><dd>0</dd><dt>1799</dt><dd>0</dd><dt>1812</dt><dd>0</dd><dt>1822</dt><dd>0</dd><dt>1826</dt><dd>0</dd><dt>1833</dt><dd>0</dd><dt>1836</dt><dd>0</dd><dt>1838</dt><dd>0</dd><dt>1843</dt><dd>0</dd><dt>1846</dt><dd>0</dd><dt>1847</dt><dd>0</dd><dt>1848</dt><dd>0</dd><dt>1858</dt><dd>0</dd><dt>1860</dt><dd>0</dd><dt>1861</dt><dd>0</dd><dt>1862</dt><dd>0</dd><dt>1867</dt><dd>0</dd><dt>1875</dt><dd>0</dd><dt>1886</dt><dd>0</dd><dt>1889</dt><dd>0</dd><dt>1897</dt><dd>0</dd><dt>1899</dt><dd>0</dd><dt>1905</dt><dd>0</dd><dt>1908</dt><dd>0</dd><dt>1912</dt><dd>0</dd><dt>1917</dt><dd>0</dd><dt>1922</dt><dd>0</dd><dt>1926</dt><dd>0</dd><dt>1931</dt><dd>0</dd><dt>1934</dt><dd>0</dd><dt>1937</dt><dd>0</dd><dt>1940</dt><dd>0</dd><dt>1947</dt><dd>0</dd><dt>1952</dt><dd>0</dd><dt>1961</dt><dd>0</dd><dt>1974</dt><dd>0</dd></dl>
+<dl class=dl-inline><dt>4</dt><dd>0</dd><dt>6</dt><dd>0</dd><dt>7</dt><dd>0</dd><dt>18</dt><dd>0</dd><dt>21</dt><dd>0</dd></dl>
 
 <details>
 	<summary style=display:list-item;cursor:pointer>
@@ -494,13 +462,7 @@ summary(predicted_val)
 ```
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style>
-<dl class=dl-inline><dt>1</dt><dd>0</dd><dt>2</dt><dd>0</dd><dt>3</dt><dd>0</dd><dt>4</dt><dd>0</dd><dt>5</dt><dd>0</dd><dt>6</dt><dd>0</dd><dt>7</dt><dd>0</dd><dt>8</dt><dd>0</dd><dt>9</dt><dd>0</dd><dt>10</dt><dd>0</dd><dt>11</dt><dd>0</dd><dt>12</dt><dd>0</dd><dt>13</dt><dd>0</dd><dt>14</dt><dd>0</dd><dt>15</dt><dd>0</dd><dt>16</dt><dd>0</dd><dt>17</dt><dd>0</dd><dt>18</dt><dd>0</dd><dt>19</dt><dd>0</dd><dt>20</dt><dd>0</dd><dt>21</dt><dd>0</dd><dt>22</dt><dd>0</dd><dt>23</dt><dd>0</dd><dt>24</dt><dd>0</dd></dl>
+<dl class=dl-inline><dt>1</dt><dd>0</dd><dt>2</dt><dd>0</dd><dt>3</dt><dd>0</dd><dt>4</dt><dd>0</dd><dt>5</dt><dd>0</dd></dl>
 
 <details>
 	<summary style=display:list-item;cursor:pointer>
@@ -516,12 +478,6 @@ summary(predicted_val)
 
 
 
-<style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style>
 <dl class=dl-inline><dt>0</dt><dd>284312</dd><dt>1</dt><dd>495</dd></dl>
 
 
