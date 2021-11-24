@@ -3,25 +3,18 @@
 <img src="https://img.shields.io/badge/Group9-Tran%20Quang%20%7C%20Le%20Minh%20Thinh%20%7C%20Tran%20Hoang%20Vinh%20%7C%20Nguyen%20Hoang%20Phuc%20%7C%20Nguyen%20Dinh%20Hoang%20Quy-blue?style=plastic"> <img src="https://img.shields.io/badge/Lecturer-Tran%20Minh%20Quang-orange?style=plastic">
 <p>
 
+# Implementation
 
-```R
-#Import library
-require(dplyr)
-require(ggplot2)
-require(caTools)
-require(ROSE)
-require(smotefamily)
-require(rpart)
-require(rpart.plot)
-require(caret)
-```
+<p align="center">
+<img src="./.github/implementation.svg?sanitize=true">
+</p>
 
 ## Tổng quan về dữ liệu
 
 <p align="justify">Tập dữ liệu <b>Fraud Credit Card</b> biểu diễn <i>284 807</i> giao dịch trong 2 ngày ở Châu Âu vào tháng 9 năm 2013. Trong đó, theo điều tra gồm có <i>492</i> gian lận chiếm <i>0.172%</i> tổng các giao dịch. Gồm có 31 biến trong tập dữ liệu:</p>
 
 - _**Time**_ : Thời gian giao dịch diễn ra tính từ giao dịch đầu tiên (seconds)
-- <div>\(V_i\) (Với i = 1,2..., 28): Là các thông số sau khi phân tích PCA và ẩn đi thông tin</div>
+- **Vi** (Với i = 1,2..., 28): Là các thông số sau khi phân tích PCA và ẩn đi thông tin
 - _**Amount**_ : Giá trị giao dịch
 - _**Class**_ : Gồm có hai giá trị (*0 - Giao dịch bình thường / 1 - Giao dịch gian lận*)
 
@@ -50,28 +43,10 @@ head(credit_dat)
 </tbody>
 </table>
 
+## Phân bố tập dữ liệu
 
-
-
-```R
-credit_dat$Class = as.factor(credit_dat$Class)
-credit_card = credit_dat
-```
-
-
-```R
-require(ggplot2)
-p = ggplot(credit_dat,aes(Class))
-summary(credit_dat$Class)
-options(repr.plot.width = 6, repr.plot.height = 4, repr.plot.res = 200)
-p + geom_bar(aes(y = (..count..)/sum(..count..),fill = Class)) +
-scale_y_continuous(labels=scales::percent) +
-ylab("Transtation") 
-# scale_color_manual(values=c('dodgerblue2','red'))
-```
-
-<dl class=dl-inline><dt>0</dt><dd>284315</dd><dt>1</dt><dd>492</dd></dl>
-
+**Legit**: *284315*  
+**Fraud**: *492*
 
 
 
@@ -79,265 +54,80 @@ ylab("Transtation")
 <img src="./.github/output_5_1.png?sanitize=true">
 <p>
 
-
-
-```R
-# No model
-predictions = rep.int(0,nrow(credit_dat))
-predictions = factor(predictions,levels=c(0,1))
-```
-
-
-```R
-require(dplyr)
-set.seed(1)
-credit_dat = credit_card %>% sample_frac(0.1)
-ggplot(credit_dat, aes(x=V1,y=V2,col=Class)) +
-    geom_point() +
-    theme_bw() +
-    scale_color_manual(values=c('dodgerblue2','red'))
-```
-
+### Biểu diễn phân bố điểm của dữ liệu theo chiều không gian (V1 và V2)
 
 <p align="center">    
 <img src="./.github/output_7_0.png?sanitize=true">
 <p>
 
-
-### Tách biệt dữ liệu ra thành 2 tập Train và Test
-
-
-```R
-require(caTools)
-set.seed(1)
-dat_smpl = sample.split(credit_dat$Class,SplitRat=0.8)
-train_dat = subset(credit_dat,dat_smpl == T)
-test_dat = subset(credit_dat,dat_smpl == F)
-train_dim = dim(train_dat)
-test_dim = dim(test_dat)
-print(paste(c("Train Dataset: Records = ","Variables = "),train_dim))
-print(paste(c("Test Dataset : Records =  ","Variables = "),test_dim))
-```
-
-    [1] "Train Dataset: Records =  22785" "Variables =  31"                
-    [1] "Test Dataset : Records =   5696" "Variables =  31"                
-    
-
-
-```R
-tmp = table(train_dat$Class)
-n_total = tmp[1]
-n_total
-summary(dat_smpl)
-```
-
-
-<strong>0:</strong> 22750
-
-
-
-       Mode   FALSE    TRUE 
-    logical    5696   22785 
-
-
+## Giải quyết vấn đề phân không cân bằng 
+	
 ### Lấy mẫu ROS - Random Over Sampling
 
-
-```R
-require(ROSE)
-n_legal = 22750
-frac_legal = 0.5
-n_total = n_legal/frac_legal
-ovrsmpl_res = ovun.sample(
-                        Class ~ .
-                        , data = train_dat
-                        , method = "over"
-                        , N = n_total
-                        , seed = 100
-)
-```
-
-
-```R
-ovrsmpl = ovrsmpl_res$data
-table(ovrsmpl$Class)
-ggplot(ovrsmpl, aes(x=V1,y=V2,col=Class)) +
-    geom_point() +
-    theme_bw() +
-    scale_color_manual(values=c('dodgerblue2','red'))
-```
-
-
-    
-        0     1 
-    22750 22750 
-
-
-
+Phân bố dữ liệu:  
+	
+**Legit** : 22840  
+**Fraud** : 22840  
+	
 <p align="center">    
 <img src="./.github/output_13_1.png?sanitize=true">
 <p>    
     
 
-
 ### Lấy mẫu RUS - Random Under Sampling
 
-
-```R
-n_fraud = 35
-frac_fraud = 0.5
-n_total = n_fraud/frac_fraud
-undrsmpl_res = ovun.sample(
-                        Class ~ .
-                        , data = train_dat
-                        , method = "under"
-                        , N = n_total
-                        , seed = 100
-)
-
-undrsmpl = undrsmpl_res$data
-table(undrsmpl$Class)
-ggplot(undrsmpl, aes(x=V1,y=V2,col=Class)) +
-    geom_point() +
-    theme_bw() +
-    scale_color_manual(values=c('dodgerblue2','red'))
-```
-
-
-    
-     0  1 
-    35 35 
-
-
+Phân bố dữ liệu :  
+	
+**Legit** : 35  
+**Fraud** : 35
 
 <p align="center">    
 <img src="./.github/output_15_1.png?sanitize=true">
 <p>
-    
-
 
 ### Lấy mẫu kết hợp
 
+Lấy mẫu kết hợp cả hai phương pháp RUS và ROS, giảm số lượng giao dịch thông thường trong dataset và tăng các giao dịch gian lận trong tập dữ liệu bằng cách sao chép dữ liệu.  
+Kết quả thu được:  
+**Legit** : 11489  
+**Fraud** : 11296  
 
-```R
-n_smpl = nrow(train_dat)
-frac_fraud = 0.5
-sampling_res = ovun.sample(
-                        Class ~ .
-                        , data = train_dat
-                        , method = "both"
-                        , N = n_smpl
-                        , seed = 100
-)
-sampls = sampling_res$data
-table(sampls$Class)
-ggplot(sampls, aes(x=V1,y=V2,col=Class)) +
-    geom_point() +
-    theme_bw() +
-    scale_color_manual(values=c('dodgerblue2','red'))
-```
-
-
-    
-        0     1 
-    11489 11296 
-
-
-
+	
 <p align="center">    
 <img src="./.github/output_17_1.png?sanitize=true">
 <p>
     
 
-
 ### Lấy mẫu SMOTE
 
+Kết quả thu được:  
 
-```R
-n0 = 22750
-n1 = 35
-r0 = 0.6
-ntimes = ((1-r0)/r0)*(n0/n1)-1
-```
-
-
-```R
-smote_smpl = SMOTE( X = train_dat[,-c(1,31)]
-                    , target = train_dat$Class
-                    , dup_size = ntimes )
-smote = smote_smpl$data
-colnames(smote)[30] <- 'Class'
-table(smote$Class)
-ggplot(smote, aes(x=V1,y=V2,col=Class)) +
-    geom_point() +
-    theme_bw() +
-    scale_color_manual(values=c('dodgerblue2','red'))
-```
-
-
-    
-        0     1 
-    22750 15155 
-
-
+**Legit** : 22750  
+**Fraud** : 15155  
 
 <p align="center">    
 <img src="./.github/output_20_1.png?sanitize=true">
 <p>
-    
+   
+## Xây dựng Mechine Learning Model
 
-
-## CART MODEL - Classification And Regression Trees
-
-
-```R
-CART_model = rpart(Class ~ ., smote)
-rpart.plot(CART_model, extra = 0, type=5, tweak=1.2)
-```
-
+### CART MODEL - Classification And Regression Trees
 
 <p align="center">    
 <img src="./.github/output_22_0.png?sanitize=true">
 <p>
     
+**Legit** : 5615
+**Fraud** : 81
 
+Trong khi đó tập dữ liệu test:
 
+**Legit** : 5687  
+**Fraud** : 9  
 
-```R
-# Predict fraud classe
-predicted_val = predict(CART_model, test_dat, type = 'class')
-head(predicted_val,24)
-summary(predicted_val)
-```
+## Đánh giá model - Quality Classification 
 
-<details>
-	<summary style=display:list-item;cursor:pointer>
-		<strong>Levels</strong>:
-	</summary>
-	<ol class=list-inline><li>'0'</li><li>'1'</li></ol>
-</details>
-
-
-
-<dl class=dl-inline><dt>0</dt><dd>5615</dd><dt>1</dt><dd>81</dd></dl>
-
-
-
-
-```R
-summary(test_dat$Class)
-```
-
-
-<dl class=dl-inline><dt>0</dt><dd>5687</dd><dt>1</dt><dd>9</dd></dl>
-
-
-
-
-```R
-confusionMatrix(predicted_val,test_dat$Class)
-```
-
+### Model Lấy Mẫu Kết Hợp
 
     Confusion Matrix and Statistics
     
@@ -351,36 +141,9 @@ confusionMatrix(predicted_val,test_dat$Class)
         No Information Rate : 0.9984          
         P-Value [Acc > NIR] : 1               
                                               
-                      Kappa : 0.1754          
+     
                                               
-     Mcnemar's Test P-Value : <2e-16          
-                                              
-                Sensitivity : 0.98716         
-                Specificity : 0.88889         
-             Pos Pred Value : 0.99982         
-             Neg Pred Value : 0.09877         
-                 Prevalence : 0.99842         
-             Detection Rate : 0.98560         
-       Detection Prevalence : 0.98578         
-          Balanced Accuracy : 0.93803         
-                                              
-           'Positive' Class : 0               
-                                              
-
-
-
-```R
-### No SMOTE
-```
-
-
-```R
-CART_model = rpart(Class ~ . , train_dat[-1])
-rpart.plot(CART_model, extra= 0, type = 5, tweak = 1.2)
-
-# Predict fraud classes
-predicted_val = predict(CART_model, test_dat[,-1], type= 'class')
-```
+Hệ số chính xác của model là **0.987**, dự đoán đúng được 8/9 trường hợp gian lận. Tuy nhiên, báo cáo sai 0.013% (73/5687) các trường hợp thông thường.
 
 
 <p align="center">    
@@ -388,26 +151,8 @@ predicted_val = predict(CART_model, test_dat[,-1], type= 'class')
 <p>
     
 
-
-
-```R
-predicted_val
-```
-
-
-<details>
-	<summary style=display:list-item;cursor:pointer>
-		<strong>Levels</strong>:
-	</summary>
-	<ol class=list-inline><li>'0'</li><li>'1'</li></ol>
-</details>
-
-
-
-```R
-confusionMatrix(predicted_val,test_dat$Class)
-```
-
+### Model Lấy mẫu SMOTE
+	
 
     Confusion Matrix and Statistics
     
@@ -417,82 +162,8 @@ confusionMatrix(predicted_val,test_dat$Class)
              1    5    9
                                              
                    Accuracy : 0.9991         
-                     95% CI : (0.998, 0.9997)
-        No Information Rate : 0.9984         
-        P-Value [Acc > NIR] : 0.11550        
+                     95% CI : (0.998, 0.9997)   
                                              
-                      Kappa : 0.7822         
-                                             
-     Mcnemar's Test P-Value : 0.07364        
-                                             
-                Sensitivity : 0.9991         
-                Specificity : 1.0000         
-             Pos Pred Value : 1.0000         
-             Neg Pred Value : 0.6429         
-                 Prevalence : 0.9984         
-             Detection Rate : 0.9975         
-       Detection Prevalence : 0.9975         
-          Balanced Accuracy : 0.9996         
-                                             
-           'Positive' Class : 0              
-                                             
-
-
-### Testing với tập dữ liệu ban đầu
-
-
-```R
-# Predict fraud classe
-predicted_val = predict(CART_model, credit_card, type = 'class')
-head(predicted_val,24)
-summary(predicted_val)
-```
-
-
-<details>
-	<summary style=display:list-item;cursor:pointer>
-		<strong>Levels</strong>:
-	</summary>
-	<ol class=list-inline><li>'0'</li><li>'1'</li></ol>
-</details>
-
-
-
-<dl class=dl-inline><dt>0</dt><dd>284312</dd><dt>1</dt><dd>495</dd></dl>
-
-
-
-
-```R
-confusionMatrix(predicted_val,credit_card$Class)
-```
-
-
-    Confusion Matrix and Statistics
-    
-              Reference
-    Prediction      0      1
-             0 284205    107
-             1    110    385
-                                              
-                   Accuracy : 0.9992          
-                     95% CI : (0.9991, 0.9993)
-        No Information Rate : 0.9983          
-        P-Value [Acc > NIR] : <2e-16          
-                                              
-                      Kappa : 0.7798          
-                                              
-     Mcnemar's Test P-Value : 0.892           
-                                              
-                Sensitivity : 0.9996          
-                Specificity : 0.7825          
-             Pos Pred Value : 0.9996          
-             Neg Pred Value : 0.7778          
-                 Prevalence : 0.9983          
-             Detection Rate : 0.9979          
-       Detection Prevalence : 0.9983          
-          Balanced Accuracy : 0.8911          
-                                              
-           'Positive' Class : 0               
-                                              
+ 
+Hệ số chính xác cao hơn hẳn model trước đó với **0.9991**, dự đoán đúng được tất cã trường hợp gian lận trong tập test. Tuy nhiên, vẫn xảy ra những báo động giả 5/5687 các trường hợp thông thường.
 
